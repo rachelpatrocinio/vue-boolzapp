@@ -12,8 +12,8 @@
     <title>Boolzapp</title>
 </head>
 <body>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <div id="app">
-        <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
         <main class="container container-lg">
             <div class="row flex">
                 <div class="col side-bar">
@@ -73,15 +73,20 @@
                             </ul>
                         </div>
                     </header>
-                    <ul class="main-bar__chat-content">
-                        <li v-for="singleMessage in contacts[currentContact].messages" class="flex" :class="singleMessage.status === 'sent' ? 'justify-content-end':'justify-content-start'">
-                           <p v-if="singleMessage.status === 'received'" class="message received">{{singleMessage.message}}</p>
-                           <p v-if="singleMessage.status === 'sent'" class="message sent">{{singleMessage.message}}</p>
+                    <ul class="main-bar__chat-content flex flex-column">
+                        <li v-for="(singleMessage, idx) in contacts[currentContact].messages" class="flex message" 
+                        :class="{'received': singleMessage.status === 'received', 
+                                 'sent': singleMessage.status === 'sent',
+                                 'align-self-end': singleMessage.status === 'sent',
+                                 'align-self-start': singleMessage.status === 'received'
+                                }"
+                        >
+                            {{singleMessage.message}}
                         </li>
                     </ul>
                     <form class="flex align-center">
                         <label for="text"><a href="#"><i class="fa-regular fa-face-smile"></i></a></label>
-                        <input v-model="newMessage" @keyup.enter="sendMessage()" id="text" name="text" type="text" placeholder="Scrivi un messaggio">
+                        <input v-model.trim="newMessage" @keydown.enter="sendMessage(currentContact)" id="text" name="text" type="text" placeholder="Scrivi un messaggio">
                         <label for="text"><a href="#"><i class="fa-solid fa-microphone"></i></a></label>
                     </form>
                 </div> <!--main-bar-->

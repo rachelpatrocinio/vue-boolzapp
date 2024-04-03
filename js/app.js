@@ -174,14 +174,18 @@ createApp ({
         indexContact(contact,i){
             this.currentContact = i; 
         },
-        sendMessage(){
+        sendMessage(currentContact){
             const newMessageText = {
                 date: '',
                 message: this.newMessage,
                 status: 'sent'
             };
             console.log(newMessageText);
+            const currentChat = this.contacts[currentContact].messages;
+            currentChat.push(newMessageText);
+            console.log(currentChat);
+            this.newMessage = ''
         }
-    }
+    },
 }).mount('#app');
 
