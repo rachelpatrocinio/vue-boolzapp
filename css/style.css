@@ -74,6 +74,10 @@ body{
     justify-content: end;
 }
 
+.gap-5{
+    gap: 5px;
+}
+
 .gap-10{
     gap: 10px;
 }
@@ -88,6 +92,10 @@ body{
 
 .active{
     background-color: var(--light-darkgray);
+}
+
+.ms-15{
+    margin-left: 15px;
 }
 
 /* Features */

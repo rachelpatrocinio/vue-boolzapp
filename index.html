@@ -74,7 +74,7 @@
                         </div>
                     </header>
                     <ul class="main-bar__chat-content flex flex-column">
-                        <li v-for="(singleMessage, idx) in contacts[currentContact].messages" class="flex message" 
+                        <li v-for="(singleMessage, idx) in contacts[currentContact].messages" class="flex message p-relative" 
                         :class="{'received': singleMessage.status === 'received', 
                                  'sent': singleMessage.status === 'sent',
                                  'align-self-end': singleMessage.status === 'sent',
@@ -82,6 +82,19 @@
                                 }"
                         >
                             {{singleMessage.message}}
+                            <div class="ms-15 flex flex-column text-center gap-5">
+                                <i class="fa-solid fa-angle-down"></i>
+                                <span>16:13</span>
+                                <ul class="message__dropdown">
+                                    <li><a href="#">Rispondi</a></li>
+                                    <li><a href="#">Reagisci</a></li>
+                                    <li><a href="#">Inoltra</a></li>
+                                    <li><a href="#">Fissa</a></li>
+                                    <li><a href="#">Importante</a></li>
+                                    <li><a href="#">Segnala</a></li>
+                                    <li><a href="#">Elimina</a></li>
+                                </ul>
+                            </div>
                         </li>
                     </ul>
                     <form class="flex align-center">
