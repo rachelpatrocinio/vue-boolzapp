@@ -19,7 +19,7 @@
                 <div class="col side-bar">
                     <header class="side-bar__header">
                         <div class="toolbar">
-                            <img class="avatar-img" src="./img/avatar_io.jpg" alt="">
+                            <img class="toolbar__img" src="./img/avatar_io.jpg" alt="">
                             <ul class="toolbar__menu">
                                 <li><a href="#"><i class="fa-solid fa-rotate-right"></i></a></li>
                                 <li><a href="#"><i class="fa-solid fa-message"></i></a></li>
@@ -46,7 +46,7 @@
                     </div>
 
                     <ul class="side-bar__chat-list">
-                        <li v-for="(contact,i) in contacts" @click="currentContact = i; openContact(contact)" :class="i === currentContact ? 'active' : ''" class="chat-card">
+                        <li v-for="(contact,i) in contacts" @click="indexContact(contact,i)" :class="i === currentContact ? 'active' : ''" class="chat-card">
                             <a class="toolbar" href="#">
                                 <img class="toolbar__img" :src="contact.avatar" alt="">
                                 <div class="toolbar__description">
@@ -61,9 +61,9 @@
                 <div class="col main-bar flex flex-column">
                     <header class="main-bar__header">
                         <div class="toolbar">
-                            <img class="toolbar__img" src="./img/avatar_1.jpg" alt="">
+                            <img class="toolbar__img" :src="contacts[currentContact].avatar" alt="">
                             <div class="toolbar__description">
-                                <h1>Michele</h1>
+                                <h1>{{ contacts[currentContact].name}}</h1>
                                 <p>Ultimo accesso oggi alle 16:26</p>
                             </div>
                             <ul class="toolbar__menu flex align-center  gap-10">
@@ -73,20 +73,15 @@
                             </ul>
                         </div>
                     </header>
-                    <ul class="main-bar__chat-content flex flex-column">
-                        <li class="sent message slide-in-right align-self-end">
-                            Hai portato a spasso il cane?
-                        </li>
-                        <li class="sent message slide-in-right align-self-end">
-                            Ricordati di stendere i panni
-                        </li>
-                        <li class="received message slide-in-left align-self-start">
-                            Tliutto fatto!
+                    <ul class="main-bar__chat-content">
+                        <li v-for="singleMessage in contacts[currentContact].messages" class="flex" :class="singleMessage.status === 'sent' ? 'justify-content-end':'justify-content-start'">
+                           <p v-if="singleMessage.status === 'received'" class="message received">{{singleMessage.message}}</p>
+                           <p v-if="singleMessage.status === 'sent'" class="message sent">{{singleMessage.message}}</p>
                         </li>
                     </ul>
                     <form class="flex align-center">
                         <label for="text"><a href="#"><i class="fa-regular fa-face-smile"></i></a></label>
-                        <input id="#text" name="text" type="text" placeholder="Scrivi un messaggio">
+                        <input id="text" name="text" type="text" placeholder="Scrivi un messaggio">
                         <label for="text"><a href="#"><i class="fa-solid fa-microphone"></i></a></label>
                     </form>
                 </div> <!--main-bar-->

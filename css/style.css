@@ -66,6 +66,14 @@ body{
     align-self: flex-start;
 }
 
+.justify-content-start{
+    justify-content: start;
+}
+
+.justify-content-end{
+    justify-content: end;
+}
+
 .gap-10{
     gap: 10px;
 }
