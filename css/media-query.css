@@ -1,0 +1,44 @@
+@media screen and (min-width: 576px){
+
+    /* .side-bar */
+
+    .side-bar{
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+@media screen and (min-width: 992px){
+
+    #app{
+        padding: 50px 0;
+    }
+
+    .container-lg{
+        width: 80%;
+        margin: 0 auto;
+        height: 100%;
+    }
+
+    .side-bar{
+        width: 300px;
+    }
+
+    .side-bar__header .toolbar__menu{
+        display: flex;
+    }
+
+    .side-bar__notification,
+    .side-bar__search-bar{
+        display: block;
+    }
+
+    .chat-time{
+        display: block;
+    }
+
+    .toolbar__description{
+        display: block;
+    }
+
+}

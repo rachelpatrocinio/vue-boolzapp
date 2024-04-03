@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/c473752e7c.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/media-query.css">
+    <title>Boolzapp</title>
+</head>
+<body>
+    <div id="app">
+
+        <main class="container container-lg">
+            <div class="row flex">
+                <div class="col side-bar">
+                    <header class="side-bar__header">
+                        <div class="toolbar">
+                            <img class="avatar-img" src="./img/avatar_io.jpg" alt="">
+                            <ul class="toolbar__menu">
+                                <li><a href="#"><i class="fa-solid fa-rotate-right"></i></a></li>
+                                <li><a href="#"><i class="fa-solid fa-message"></i></a></li>
+                                <li><a href="#"><i class="fa-solid fa-ellipsis-vertical"></i></a></i></li>
+                            </ul>
+                        </div>
+                    </header>
+
+                    <div class="side-bar__notification">
+                        <div class="row flex">
+                            <div class="col bell">
+                                <i class="fa-solid fa-bell-slash"></i>
+                            </div>
+                            <div class="col bell__description">
+                                <strong>Ricevi notifiche di nuovi messaggi</strong>
+                                <a href="#">Attiva notifiche desktop</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="side-bar__search-bar p-relative">
+                        <input type="search" placeholder="Cerca o inizia una nuova chat" name="search" id="search-bar">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+
+                    <ul class="side-bar__chat-list">
+                        <li class="chat-card">
+                            <a class="toolbar" href="#">
+                                <img class="toolbar__img" src="./img/avatar_1.jpg" alt="">
+                                <div class="toolbar__description">
+                                    <h1>Michele</h1>
+                                    <p>Lorem ipsum dolor sit amet.</p>
+                                </div>
+                                <p class="chat-time">16:15</p>
+                            </a>
+                        <li class="chat-card">
+                            <a class="toolbar" href="#">
+                                <img class="toolbar__img" src="./img/avatar_2.jpg" alt="">
+                                <div class="toolbar__description">
+                                    <h1>Fabio</h1>
+                                    <p>Lorem ipsum dolor sit amet.</p>
+                                </div>
+                                <p class="chat-time">16:05</p>
+                            </a>
+                        </li>
+                        <li class="chat-card">
+                            <a class="toolbar" href="#">
+                                <img class="toolbar__img" src="./img/avatar_3.jpg" alt="">
+                                <div class="toolbar__description">
+                                    <h1>Samuele</h1>
+                                    <p>Lorem ipsum dolor sit amet.</p>
+                                </div>
+                                <p class="chat-time">16:03</p>
+                            </a>
+                        </li>
+                        <li class="chat-card">
+                            <a class="toolbar" href="#">
+                                <img class="toolbar__img" src="./img/avatar_4.jpg" alt="">
+                                <div class="toolbar__description">
+                                    <h1>Alessandro B.</h1>
+                                    <p>Lorem ipsum dolor sit amet.</p>
+                                </div>
+                                <p class="chat-time">15:50</p>
+                            </a>
+                        </li>
+                        <li class="chat-card">
+                            <a class="toolbar" href="#">
+                                <img class="toolbar__img" src="./img/avatar_5.jpg" alt="">
+                                <div class="toolbar__description">
+                                    <h1>Alessandro L.</h1>
+                                    <p>Lorem ipsum dolor sit amet.</span>
+                                </div>
+                                <p class="chat-time">15:45</p>
+                            </a>
+                        </li>
+                        <li class="chat-card">
+                            <a class="toolbar" href="#">
+                                <img class="toolbar__img" src="./img/avatar_6.jpg" alt="">
+                                <div class="toolbar__description">
+                                    <h1>Claudia</h1>
+                                    <p>Lorem ipsum dolor sit amet.</p>
+                                </div>
+                                <p class="chat-time">15:50</p>
+                            </a>
+                        </li>
+                        <li class="chat-card">
+                            <a class="toolbar" href="#">
+                                <img class="toolbar__img" src="./img/avatar_7.jpg" alt="">
+                                <div class="toolbar__description">
+                                    <h1>Federico</h1>
+                                    <p>Lorem ipsum dolor sit amet.</p>
+                                </div>
+                                <p class="chat-time">15:45</p>
+                            </a>
+                        </li>
+                        <li class="chat-card">
+                            <a class="toolbar" href="#">
+                                <img class="toolbar__img" src="./img/avatar_8.jpg" alt="">
+                                <div class="toolbar__description">
+                                    <h1>Davide</h1>
+                                    <p>Lorem ipsum dolor sit amet.</p>
+                                </div>
+                                <p class="chat-time">15:22</p>
+                            </a>
+                        </li>
+                    </ul>
+                </div> <!--side-bar-->
+                <div class="col main-bar flex flex-column">
+                    <header class="main-bar__header">
+                        <div class="toolbar">
+                            <img class="toolbar__img" src="./img/avatar_1.jpg" alt="">
+                            <div class="toolbar__description">
+                                <h1>Michele</h1>
+                                <p>Ultimo accesso oggi alle 16:26</p>
+                            </div>
+                            <ul class="toolbar__menu flex align-center  gap-10">
+                                <li><a href="#"><i class="fa-solid fa-magnifying-glass"></i></a></li>
+                                <li><a href="#"><i class="fa-solid fa-paperclip"></i></a></li>
+                                <li><a href="#"></a><i class="fa-solid fa-ellipsis-vertical"></i></li>
+                            </ul>
+                        </div>
+                    </header>
+                    <div class="main-bar__chat-content flex flex-column">
+                        <div class="sent message slide-in-right align-self-end flex p-relative">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi ab beatae totam laudantium non cum, ratione consequuntur sapiente quam harum ea maiores, ad unde tenetur facere autem consectetur. Nulla, laborum.</p>
+                            <div class="flex flex-column space-between text-center">
+                                <i class="fa-solid fa-angle-down"></i>
+                                <span>16:13</span>
+                                <ul class="message__dropdown">
+                                    <li><a href="#">Rispondi</a></li>
+                                    <li><a href="#">Reagisci</a></li>
+                                    <li><a href="#">Inoltra</a></li>
+                                    <li><a href="#">Fissa</a></li>
+                                    <li><a href="#">Importante</a></li>
+                                    <li><a href="#">Segnala</a></li>
+                                    <li><a href="#">Elimina</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="sent message slide-in-right align-self-end flex p-relative">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi ab beatae totam laudantium non cum, ratione consequuntur sapiente quam harum ea maiores, ad unde tenetur facere autem consectetur. Nulla, laborum.</p>
+                            <div class="flex flex-column space-between text-center">
+                                <i class="fa-solid fa-angle-down"></i>
+                                <span>16:13</span>
+                                <ul class="message__dropdown">
+                                    <li><a href="#">Rispondi</a></li>
+                                    <li><a href="#">Reagisci</a></li>
+                                    <li><a href="#">Inoltra</a></li>
+                                    <li><a href="#">Fissa</a></li>
+                                    <li><a href="#">Importante</a></li>
+                                    <li><a href="#">Segnala</a></li>
+                                    <li><a href="#">Elimina</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="sent message slide-in-right align-self-end flex p-relative">
+                            <p>Lorem ipsum dolor sit amet. <br> Lorem ipsum dolor sit amet.</p>
+                            <div class="flex flex-column space-between text-center">
+                                <i class="fa-solid fa-angle-down"></i>
+                                <span>16:13</span>
+                                <ul class="message__dropdown">
+                                    <li><a href="#">Rispondi</a></li>
+                                    <li><a href="#">Reagisci</a></li>
+                                    <li><a href="#">Inoltra</a></li>
+                                    <li><a href="#">Fissa</a></li>
+                                    <li><a href="#">Importante</a></li>
+                                    <li><a href="#">Segnala</a></li>
+                                    <li><a href="#">Elimina</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="received message slide-in-left flex align-self-start  p-relative">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi ab beatae totam laudantium non cum, ratione consequuntur sapiente quam harum ea maiores, ad unde tenetur facere autem consectetur. Nulla, laborum.</p>
+                            <div class="flex flex-column space-between text-center">
+                                <i class="fa-solid fa-angle-down"></i>
+                                <span>16:13</span>
+                                <ul class="message__dropdown">
+                                    <li><a href="#">Rispondi</a></li>
+                                    <li><a href="#">Reagisci</a></li>
+                                    <li><a href="#">Inoltra</a></li>
+                                    <li><a href="#">Fissa</a></li>
+                                    <li><a href="#">Importante</a></li>
+                                    <li><a href="#">Segnala</a></li>
+                                    <li><a href="#">Elimina</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="received message slide-in-left flex align-self-start p-relative">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. <br> Ratione consequuntur sapiente quam harum ea maiores, ad unde tenetur facere autem consectetur. <br> Nulla, laborum.</p>
+                            <div class="flex flex-column space-between text-center">
+                                <i class="fa-solid fa-angle-down"></i>
+                                <span>16:13</span>
+                                <ul class="message__dropdown">
+                                    <li><a href="#">Rispondi</a></li>
+                                    <li><a href="#">Reagisci</a></li>
+                                    <li><a href="#">Inoltra</a></li>
+                                    <li><a href="#">Fissa</a></li>
+                                    <li><a href="#">Importante</a></li>
+                                    <li><a href="#">Segnala</a></li>
+                                    <li><a href="#">Elimina</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="sent message slide-in-right align-self-end flex p-relative">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi ab beatae totam laudantium non cum, ratione consequuntur sapiente quam harum ea maiores, ad unde tenetur facere autem consectetur. Nulla, laborum.</p>
+                            <div class="flex flex-column space-between text-center">
+                                <i class="fa-solid fa-angle-down"></i>
+                                <span>16:13</span>
+                                <ul class="message__dropdown">
+                                    <li><a href="#">Rispondi</a></li>
+                                    <li><a href="#">Reagisci</a></li>
+                                    <li><a href="#">Inoltra</a></li>
+                                    <li><a href="#">Fissa</a></li>
+                                    <li><a href="#">Importante</a></li>
+                                    <li><a href="#">Segnala</a></li>
+                                    <li><a href="#">Elimina</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="received slide-in-left message flex align-self-start  p-relative">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi ab beatae totam laudantium non cum, ratione consequuntur sapiente quam harum ea maiores, ad unde tenetur facere autem consectetur. Nulla, laborum.</p>
+                            <div class="flex flex-column space-between text-center">
+                                <i class="fa-solid fa-angle-down"></i>
+                                <span>16:13</span>
+                                <ul class="message__dropdown">
+                                    <li><a href="#">Rispondi</a></li>
+                                    <li><a href="#">Reagisci</a></li>
+                                    <li><a href="#">Inoltra</a></li>
+                                    <li><a href="#">Fissa</a></li>
+                                    <li><a href="#">Importante</a></li>
+                                    <li><a href="#">Segnala</a></li>
+                                    <li><a href="#">Elimina</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="received message slide-in-left flex align-self-start  p-relative">
+                            <p>Lorem ipsum dolor sit amet.<br>Lorem ipsum dolor sit amet.</p>
+                            <div class="flex flex-column space-between text-center">
+                                <i class="fa-solid fa-angle-down"></i>
+                                <span>16:13</span>
+                                <ul class="message__dropdown">
+                                    <li><a href="#">Rispondi</a></li>
+                                    <li><a href="#">Reagisci</a></li>
+                                    <li><a href="#">Inoltra</a></li>
+                                    <li><a href="#">Fissa</a></li>
+                                    <li><a href="#">Importante</a></li>
+                                    <li><a href="#">Segnala</a></li>
+                                    <li><a href="#">Elimina</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <form class="flex align-center">
+                        <label for="text"><a href="#"><i class="fa-regular fa-face-smile"></i></a></label>
+                        <input id="#text" name="text" type="text" placeholder="Scrivi un messaggio">
+                        <label for="text"><a href="#"><i class="fa-solid fa-microphone"></i></a></label>
+                    </form>
+                </div> <!--main-bar-->
+            </div>
+        </main>
+
+    </div>
+    
+</body>
+</html>
