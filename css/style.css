@@ -78,6 +78,10 @@ body{
     text-align: center;
 }
 
+.active{
+    background-color: var(--light-darkgray);
+}
+
 /* Features */
 .toolbar{
     height: 50px;

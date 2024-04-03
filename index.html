@@ -46,7 +46,7 @@
                     </div>
 
                     <ul class="side-bar__chat-list">
-                        <li v-for="contact in contacts" class="chat-card">
+                        <li v-for="(contact,i) in contacts" @click="currentContact = i" :class="i === currentContact ? 'active' : ''" class="chat-card">
                             <a class="toolbar" href="#">
                                 <img class="toolbar__img" :src="contact.avatar" alt="">
                                 <div class="toolbar__description">
