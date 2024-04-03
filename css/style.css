@@ -154,7 +154,7 @@ body{
 }
 
 .message.sent + .message.received,
-.message.receieved + .message.sent{
+.message.received + .message.sent{
     margin-top: 30px;
 }
 
