@@ -171,13 +171,27 @@ createApp ({
     },//data
     methods:{
         openContact(contact){
-            // console.log(contact);
+            const chatContent = document.querySelector('.main-bar__chat-content');
+            chatContent.innerHTML = '';
+            // console.log(chatContent);
+            
             const img = document.querySelector('.main-bar .toolbar__img');
-            console.log(img);
             img.src = contact.avatar;   
 
             const name = document.querySelector('.main-bar .toolbar__description h1');
             name.innerHTML = contact.name;
+
+            const messages = contact.messages;
+            messages.forEach(el =>{
+                const chatElement = document.createElement("div");
+                chatElement.innerHTML = `${el.message}`;
+                if(el.status === 'sent'){
+                    chatElement.classList.add('sent','message', 'slide-in-right', 'align-self-end');
+                } else{
+                    chatElement.classList.add('received', 'message', 'slide-in-left', 'align-self-start');
+                }
+                chatContent.append(chatElement);
+            })
         }
     }
 }).mount('#app');
