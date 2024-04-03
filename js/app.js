@@ -185,7 +185,17 @@ createApp ({
             currentChat.push(newMessageText);
             console.log(currentChat);
             this.newMessage = ''
+
+            const reply = {
+                date: '',
+                message: 'OK!!',
+                status: 'received'
+            };
+
+            setTimeout(() => {
+                currentChat.push(reply);
+            },1000);
         }
-    },
+    }
 }).mount('#app');
 
