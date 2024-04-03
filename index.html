@@ -81,7 +81,7 @@
                     </ul>
                     <form class="flex align-center">
                         <label for="text"><a href="#"><i class="fa-regular fa-face-smile"></i></a></label>
-                        <input id="text" name="text" type="text" placeholder="Scrivi un messaggio">
+                        <input v-model="newMessage" @keyup.enter="sendMessage()" id="text" name="text" type="text" placeholder="Scrivi un messaggio">
                         <label for="text"><a href="#"><i class="fa-solid fa-microphone"></i></a></label>
                     </form>
                 </div> <!--main-bar-->

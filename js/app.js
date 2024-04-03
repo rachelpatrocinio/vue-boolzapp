@@ -4,6 +4,7 @@ createApp ({
     data(){
         return{
             currentContact: 0,
+            newMessage:'',
             contacts: [
                 {
                     name: 'Michele',
@@ -172,6 +173,14 @@ createApp ({
     methods:{
         indexContact(contact,i){
             this.currentContact = i; 
+        },
+        sendMessage(){
+            const newMessageText = {
+                date: '',
+                message: this.newMessage,
+                status: 'sent'
+            };
+            console.log(newMessageText);
         }
     }
 }).mount('#app');
