@@ -46,7 +46,7 @@
                     </div>
 
                     <ul class="side-bar__chat-list">
-                        <li v-for="(contact,i) in contacts" @click="currentContact = i" :class="i === currentContact ? 'active' : ''" class="chat-card">
+                        <li v-for="(contact,i) in contacts" @click="currentContact = i; openContact(contact)" :class="i === currentContact ? 'active' : ''" class="chat-card">
                             <a class="toolbar" href="#">
                                 <img class="toolbar__img" :src="contact.avatar" alt="">
                                 <div class="toolbar__description">
@@ -90,6 +90,7 @@
                                 </ul>
                             </div>
                         </div>
+                        <!--
                         <div class="sent message slide-in-right align-self-end flex p-relative">
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi ab beatae totam laudantium non cum, ratione consequuntur sapiente quam harum ea maiores, ad unde tenetur facere autem consectetur. Nulla, laborum.</p>
                             <div class="flex flex-column space-between text-center">
@@ -201,7 +202,7 @@
                                     <li><a href="#">Elimina</a></li>
                                 </ul>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                     <form class="flex align-center">
                         <label for="text"><a href="#"><i class="fa-regular fa-face-smile"></i></a></label>

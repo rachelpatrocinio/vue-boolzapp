@@ -170,6 +170,15 @@ createApp ({
         } //return
     },//data
     methods:{
+        openContact(contact){
+            // console.log(contact);
+            const img = document.querySelector('.main-bar .toolbar__img');
+            console.log(img);
+            img.src = contact.avatar;   
+
+            const name = document.querySelector('.main-bar .toolbar__description h1');
+            name.innerHTML = contact.name;
+        }
     }
 }).mount('#app');
 
