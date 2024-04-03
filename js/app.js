@@ -183,7 +183,7 @@ createApp ({
 
             const messages = contact.messages;
             messages.forEach(el =>{
-                const chatElement = document.createElement("div");
+                const chatElement = document.createElement("li");
                 chatElement.innerHTML = `${el.message}`;
                 if(el.status === 'sent'){
                     chatElement.classList.add('sent','message', 'slide-in-right', 'align-self-end');
