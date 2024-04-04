@@ -3,7 +3,7 @@ const { createApp } = Vue;
 createApp ({
     data(){
         return{
-            currentContact: 0,
+            currentIndex: 0,
             newMessage:'',
             contacts: [
                 {
@@ -172,16 +172,16 @@ createApp ({
     },//data
     methods:{
         indexContact(contact,i){
-            this.currentContact = i; 
+            this.currentIndex = i; 
         },
-        sendMessage(currentContact){
+        sendMessage(currentIndex){
             const newMessageText = {
                 date: '',
                 message: this.newMessage,
                 status: 'sent'
             };
             console.log(newMessageText);
-            const currentChat = this.contacts[currentContact].messages;
+            const currentChat = this.contacts[currentIndex].messages;
             currentChat.push(newMessageText);
             console.log(currentChat);
             this.newMessage = ''
@@ -195,6 +195,11 @@ createApp ({
             setTimeout(() => {
                 currentChat.push(reply);
             },1000);
+        }
+    },
+    computed:{
+        currentContact(){
+            return this.contacts[this.currentIndex];
         }
     }
 }).mount('#app');

@@ -46,14 +46,14 @@
                     </div>
 
                     <ul class="side-bar__chat-list">
-                        <li v-for="(contact,i) in contacts" @click="indexContact(contact,i)" :class="i === currentContact ? 'active' : ''" class="chat-card">
+                        <li v-for="(contact,i) in contacts" @click="indexContact(contact,i)" :class="i === currentIndex ? 'active' : ''" class="chat-card">
                             <a class="toolbar" href="#">
                                 <img class="toolbar__img" :src="contact.avatar" alt="">
                                 <div class="toolbar__description">
                                     <h1>{{ contact.name }}</h1>
                                     <p>{{ contact.messages.at(-1).message}}</p>
                                 </div>
-                                <p class="chat-time">16:15</p>
+                                <p class="chat-time">{{contact.messages.at(-1).date.slice(11,16)}}</p>
                             </a>
                         </li>
                     </ul>
@@ -61,9 +61,9 @@
                 <div class="col main-bar flex flex-column">
                     <header class="main-bar__header">
                         <div class="toolbar">
-                            <img class="toolbar__img" :src="contacts[currentContact].avatar" alt="">
+                            <img class="toolbar__img" :src="currentContact.avatar" alt="">
                             <div class="toolbar__description">
-                                <h1>{{ contacts[currentContact].name}}</h1>
+                                <h1>{{ currentContact.name }}</h1>
                                 <p>Ultimo accesso oggi alle 16:26</p>
                             </div>
                             <ul class="toolbar__menu flex align-center  gap-10">
@@ -74,7 +74,7 @@
                         </div>
                     </header>
                     <ul class="main-bar__chat-content flex flex-column">
-                        <li v-for="(singleMessage, idx) in contacts[currentContact].messages" class="flex message p-relative" 
+                        <li v-for="singleMessage in currentContact.messages" class="flex message p-relative" 
                         :class="{'received': singleMessage.status === 'received', 
                                  'sent': singleMessage.status === 'sent',
                                  'align-self-end': singleMessage.status === 'sent',
@@ -84,7 +84,7 @@
                             {{singleMessage.message}}
                             <div class="ms-15 flex flex-column text-center gap-5">
                                 <i class="fa-solid fa-angle-down"></i>
-                                <span>16:13</span>
+                                <span>{{singleMessage.date.slice(11,16)}}</span>
                                 <ul class="message__dropdown">
                                     <li><a href="#">Rispondi</a></li>
                                     <li><a href="#">Reagisci</a></li>
