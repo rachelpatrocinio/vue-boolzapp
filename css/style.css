@@ -98,6 +98,14 @@ body{
     margin-left: 15px;
 }
 
+.d-none{
+    display: none;
+}
+
+.d-block{
+    display: block;
+}
+
 /* Features */
 .toolbar{
     height: 50px;
@@ -184,7 +192,7 @@ body{
     background-color: var(--white);
     font-size: 14px;
     filter: drop-shadow(2px 2px 5px rgb(0 0 0 / 0.5));
-    display: none;
+    /* display: none; */
     z-index: 999;
 }
 
@@ -197,9 +205,9 @@ body{
     background-color: var(--lightgray);
 }
 
-.fa-angle-down:hover ~ .message__dropdown{
+/* .fa-angle-down:hover ~ .message__dropdown{
     display: block;
-}
+} */
 
 /* Main */
 

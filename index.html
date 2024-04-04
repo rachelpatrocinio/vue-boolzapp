@@ -84,7 +84,7 @@
                         </div>
                     </header>
                     <ul class="main-bar__chat-content flex flex-column">
-                        <li v-for="singleMessage in currentContact.messages" class="flex message p-relative" 
+                        <li v-for="(singleMessage,i) in currentContact.messages" class="flex message p-relative" 
                         :class="{'received': singleMessage.status === 'received', 
                                  'sent': singleMessage.status === 'sent',
                                  'align-self-end': singleMessage.status === 'sent',
@@ -93,9 +93,9 @@
                         >
                             {{singleMessage.message}}
                             <div class="ms-15 flex flex-column text-center gap-5">
-                                <i class="fa-solid fa-angle-down"></i>
+                                <i @click="openDropDown(i)" class="fa-solid fa-angle-down"></i>
                                 <span>{{singleMessage.date.slice(11,16)}}</span>
-                                <ul class="message__dropdown">
+                                <ul class="message__dropdown d-none">
                                     <li><a href="#">Rispondi</a></li>
                                     <li><a href="#">Reagisci</a></li>
                                     <li><a href="#">Inoltra</a></li>

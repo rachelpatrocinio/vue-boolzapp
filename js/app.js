@@ -202,8 +202,20 @@ createApp ({
             const contactsFilter = this.contacts.filter(contact => {
               return contact.name.toLowerCase().includes(this.searchBarValue.toLowerCase());
             });
-    
             this.filteredContacts = contactsFilter;
+        },
+        openDropDown(i){
+            // console.log(i);
+            // console.log(this.currentContact);
+            const message = document.querySelectorAll('.message__dropdown');
+            // console.log(message)
+            if(this.currentContact.visible === true){
+                this.currentContact.visible = false;
+                message[i].classList.add('d-block');
+            }else if(this.currentContact.visible === false){
+                this.currentContact.visible = true;
+                message[i].classList.remove('d-block');
+            }
         }
     },
     computed:{
