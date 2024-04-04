@@ -200,7 +200,7 @@ createApp ({
         },
         searchContact() {
             const contactsFilter = this.contacts.filter(contact => {
-              return contact.name.includes(this.searchBarValue);
+              return contact.name.toLowerCase().includes(this.searchBarValue.toLowerCase());
             });
     
             this.filteredContacts = contactsFilter;
