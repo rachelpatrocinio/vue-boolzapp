@@ -216,6 +216,9 @@ createApp ({
                 this.currentContact.visible = true;
                 message[i].classList.remove('d-block');
             }
+        },
+        deleteMessage(i){
+            this.currentContact.messages.splice(i,1);
         }
     },
     computed:{
