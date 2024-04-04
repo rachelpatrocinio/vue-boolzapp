@@ -7,6 +7,7 @@ createApp ({
             newMessage:'',
             searchBarValue: '',
             filteredContacts: [],
+            contactsAdditional: [],
             contacts: [
                 {
                     name: 'Michele',
@@ -16,7 +17,7 @@ createApp ({
                         {
                         date: '10/01/2020 15:30:55',
                         message: 'Hai portato a spasso il cane?',
-                        status: 'sent'
+                        status: 'sent',
                         },
                         {
                         date: '10/01/2020 15:50:00',
@@ -189,7 +190,7 @@ createApp ({
             this.newMessage = ''
 
             const reply = {
-                date: '',
+                date: '10/01/2020 15:51:00',
                 message: 'OK!!',
                 status: 'received'
             };
@@ -205,16 +206,10 @@ createApp ({
             this.filteredContacts = contactsFilter;
         },
         openDropDown(i){
-            // console.log(i);
-            // console.log(this.currentContact);
-            const message = document.querySelectorAll('.message__dropdown');
-            // console.log(message)
-            if(this.currentContact.visible === true){
-                this.currentContact.visible = false;
-                message[i].classList.add('d-block');
-            }else if(this.currentContact.visible === false){
-                this.currentContact.visible = true;
-                message[i].classList.remove('d-block');
+            if(this.contactsAdditional[i] === false){
+                this.contactsAdditional[i] = true;
+            } else{
+                this.contactsAdditional[i] = false;
             }
         },
         deleteMessage(i){
@@ -225,6 +220,12 @@ createApp ({
         currentContact(){
             return this.contacts[this.currentIndex];
         }
+    },
+    mounted() {
+        this.contactsAdditional = this.contacts.map(contact => {
+            return {dropdownOpen: false};
+        });
+        console.log(this.contactsAdditional);
     }
 }).mount('#app');
 

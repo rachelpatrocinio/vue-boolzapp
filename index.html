@@ -95,7 +95,7 @@
                             <div class="ms-15 flex flex-column text-center gap-5">
                                 <i @click="openDropDown(i)" class="fa-solid fa-angle-down"></i>
                                 <span>{{singleMessage.date.slice(11,16)}}</span>
-                                <ul class="message__dropdown d-none">
+                                <ul class="message__dropdown d-none" :class="contactsAdditional[i] === false ? 'd-block':''">
                                     <li><a href="#">Rispondi</a></li>
                                     <li><a href="#">Reagisci</a></li>
                                     <li><a href="#">Inoltra</a></li>
