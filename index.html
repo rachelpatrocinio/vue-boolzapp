@@ -99,7 +99,7 @@
                     </ul>
                     <form class="flex align-center">
                         <label for="text"><a href="#"><i class="fa-regular fa-face-smile"></i></a></label>
-                        <input v-model.trim="newMessage" @keydown.enter="sendMessage(currentContact)" id="text" name="text" type="text" placeholder="Scrivi un messaggio">
+                        <input v-model.trim="newMessage" @keydown.enter="sendMessage(currentIndex)" id="text" name="text" type="text" placeholder="Scrivi un messaggio">
                         <label for="text"><a href="#"><i class="fa-solid fa-microphone"></i></a></label>
                     </form>
                 </div> <!--main-bar-->
