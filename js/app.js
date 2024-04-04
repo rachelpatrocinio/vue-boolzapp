@@ -5,6 +5,8 @@ createApp ({
         return{
             currentIndex: 0,
             newMessage:'',
+            searchBarValue: '',
+            filteredContacts: [],
             contacts: [
                 {
                     name: 'Michele',
@@ -195,6 +197,13 @@ createApp ({
             setTimeout(() => {
                 currentChat.push(reply);
             },1000);
+        },
+        searchContact() {
+            const contactsFilter = this.contacts.filter(contact => {
+              return contact.name.includes(this.searchBarValue);
+            });
+    
+            this.filteredContacts = contactsFilter;
         }
     },
     computed:{

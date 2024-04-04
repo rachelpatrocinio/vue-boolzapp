@@ -41,12 +41,22 @@
                     </div>
 
                     <div class="side-bar__search-bar p-relative">
-                        <input type="search" placeholder="Cerca o inizia una nuova chat" name="search" id="search-bar">
+                        <input @keyup="searchContact" v-model="searchBarValue" type="search" placeholder="Cerca o inizia una nuova chat" name="search" id="search-bar">
                         <i class="fa-solid fa-magnifying-glass"></i>
                     </div>
 
                     <ul class="side-bar__chat-list">
-                        <li v-for="(contact,i) in contacts" @click="indexContact(contact,i)" :class="i === currentIndex ? 'active' : ''" class="chat-card">
+                        <li v-if="filteredContacts.length === 0" v-for="(contact,i) in contacts" @click="indexContact(contact,i)" :class="i === currentIndex ? 'active' : ''" class="chat-card">
+                            <a class="toolbar" href="#">
+                                <img class="toolbar__img" :src="contact.avatar" alt="">
+                                <div class="toolbar__description">
+                                    <h1>{{ contact.name }}</h1>
+                                    <p>{{ contact.messages.at(-1).message}}</p>
+                                </div>
+                                <p class="chat-time">{{contact.messages.at(-1).date.slice(11,16)}}</p>
+                            </a>
+                        </li>
+                        <li v-else v-for="(contact,i) in filteredContacts" @click="indexContact(contact,i)" :class="i === currentIndex ? 'active' : ''" class="chat-card">
                             <a class="toolbar" href="#">
                                 <img class="toolbar__img" :src="contact.avatar" alt="">
                                 <div class="toolbar__description">
