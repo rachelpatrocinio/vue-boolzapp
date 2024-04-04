@@ -214,6 +214,11 @@ createApp ({
         },
         deleteMessage(i){
             this.currentContact.messages.splice(i,1);
+            if(this.contactsAdditional[i] === false){
+                this.contactsAdditional[i] = true;
+            } else{
+                this.contactsAdditional[i] = false;
+            }
         }
     },
     computed:{
