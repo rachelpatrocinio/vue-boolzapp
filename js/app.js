@@ -199,12 +199,6 @@ createApp ({
                 currentChat.push(reply);
             },1000);
         },
-        searchContact() {
-            const contactsFilter = this.contacts.filter(contact => {
-              return contact.name.toLowerCase().includes(this.searchBarValue.toLowerCase());
-            });
-            this.filteredContacts = contactsFilter;
-        },
         openDropDown(i){
             if(this.contactsAdditional[i] === false){
                 this.contactsAdditional[i] = true;
